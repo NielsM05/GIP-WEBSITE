@@ -1,0 +1,300 @@
+/***********************HTML TAGS*******************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #eeeeee;
+}
+
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #062e70;
+}
+  
+
+/* Making the underline of the links in the navbar. */
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #eeeeee;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+a:hover::after {
+  transform: scaleX(1);
+}
+    
+li {
+  list-style: none;
+}
+hr {
+  border: dotted grey 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 100px auto;
+}
+h2 {
+  border-style: solid;
+  color: #062e70;
+  border-color: #062e70;
+  text-align: center;
+  font-size: 50px;
+  border-left: none;
+  border-right: none;
+}
+h3 {
+  color: #062e70;
+}
+p{
+  line-height: 1.5;
+}
+/***********************CLASS TAGS******************************/
+.TitelPagina {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  color: #062e70;
+  font-size: 80px;
+  justify-content: center;
+  border-bottom: solid;
+  border-color: #062e70;
+}
+.tussentitel{
+  font-size: 30px;
+  text-align: center;
+  color: #062e70;
+  
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #062e70;
+  color: #fff;
+}
+.inleidingtekst {
+  width: 50%;
+  margin: 100px auto 0 auto;
+  text-align: left;
+  line-height: 2;
+}
+.inleidingfoto {
+  width: 25%;
+  float: right;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  border-color: #062e70;
+}
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO NAVBAR */
+.logo img{
+  font-size: 32px;
+  display: block;
+  height: 60px;
+  background-color: #eeeeee;
+  border-radius: 8px;
+  padding: 5px;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+.nieuws {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  border-style: solid;
+  border-radius: 8px;
+  padding: 30px;
+  border-color: #062e70;
+}
+.nieuwspertwee{
+  flex: 1;
+  width: 50%;
+  margin: 50px 30px 30px 30px;
+  text-align: center;
+  border-style: solid;
+  border-radius: 8px;
+  padding: 30px;
+  border-color: #062e70;
+
+}
+.afbeelding{
+  text-align: center;
+  justify-content: center;
+}
+.analysetitels{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  color: #062e70;
+  margin: 20px auto 20px auto;
+  font-size: 80px;
+  justify-content: center;
+  border-bottom: solid;
+  border-top: solid;
+  border-color: #062e70;
+}
+/* DROPDOWN MENU */
+.drop {
+  position: relative;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #062e70;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+  width: auto;
+}
+.pertwee{
+  display: flex;
+}
+
+.drop:hover .dropdown {
+  display: block;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+    position: relative;
+    background-color: #062e70;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: 064470;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: 064470;
+  }
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding-top: 100px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #062e70;
+  padding: 50px 0 20px;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+}
+.footertexttitle {
+  color: white;
+  font-size: large;
+  border-style: none;
+  text-align: left;
+  flex: 1;
+  border-top: solid;
+  border-color: white;
+  padding: 10px 0 0 20px;
+}
+.footertext {
+  color: white;
+  text-align: right;
+  flex: 1;
+  border-top: solid;
+  border-color: white;
+  padding: 20px 20px 0 0;
+  font-weight: bold;
+}
+/***********************ID TAGS********************************/
